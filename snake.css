@@ -4,7 +4,9 @@
 }
 
 body{
-  background-color: black;
+  background-color: lightblue;
+  border: 2px;
+  border-color: white;
 }
 
 td {
@@ -13,17 +15,17 @@ td {
 }
 
 .blank {
-  background-color: blank;
+  background-color:#B30838;
 }
 
 .snake {
-  background-color: white;
+  background-color: #B30838;
 }
 
 .wall {
-  background-color: green;
+  background-color: #013A81;
 }
 
 .fruit {
-  background-color: red;
+  background-color: #F5E700;
 }
