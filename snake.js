@@ -7,8 +7,8 @@ var running = false;
 var gameOver = false;
 var direction = -1; // up = 0, down = -1, left = 1, right = 2
 var score = 0;
-var width = 20;
-var height = 20;
+var width = 18;
+var height = 18;
 var interval = 100; //longer makes game slower
 var increment = 1;
 var int;
@@ -47,10 +47,16 @@ function createMap(){
 
     document.write("</table>");
     document.write("<h1 id='score'>Score: </h1>")
+    document.write("<h2 id='restart'>Instructions:</h2>")
+    document.write("<h3 id='instructions'> W - Up</h3>")
+    document.write("<h3 id='instructions'>A - Left</h3>")
+    document.write("<h3 id='instructions'> S - Down</h3>")
+    document.write("<h3 id='instructions'>D - Right</h3>")
+    document.write("<h3 id='instructions'>Refresh to Restart</h3>")
 }
 
 /**
- * creates first piece of snake
+ * creates snake
  */
 function createSnake(){
     document.getElementById("2-2").setAttribute("class", "snake-alive");
@@ -58,7 +64,7 @@ function createSnake(){
 
 
 /**
- * sets a random block, which is not a snake, to a fruit type block
+ * sets a random block to a fruit type block
  */
 function createFruit(){
     var found = false;
@@ -100,7 +106,7 @@ function getBlock(x, y){
 
 
 /**
- * key listener of program
+ * key listeners
  * uses WASD controls
  */
 window.addEventListener("keypress", function key(){
@@ -162,8 +168,8 @@ function update(){
         length+=increment;
         createFruit();
     }
-    var poop = length+1;
-    document.getElementById("score").innerHTML = "Score: " + score + " Length: "+ poop;
+    var gameDetails = length+1;
+    document.getElementById("score").innerHTML = "Score: " + score + " Length: "+ gameDetails;
 }
 
 function updateTail(){
